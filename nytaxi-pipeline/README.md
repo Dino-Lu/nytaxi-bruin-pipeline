@@ -230,7 +230,7 @@ The --downstream flag executes the selected asset along with all assets that dep
 
 Correct answer:
 
-not_null: true
+name: not_null
 
 Explanation:
 
@@ -243,7 +243,7 @@ Adding a 'not_null' check ensures that the 'pickup_datetime' column does not con
 Correct answer:
 
 ```bash
-bruin graph
+bruin lineage
 ```
 Explanation:
 
