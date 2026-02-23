@@ -1,0 +1,23 @@
+# Seed Asset: Load a local CSV file as a lookup table
+# Seed assets let you load CSV files directly into your data platform.
+# This is useful for small, static reference/lookup data.
+
+name: ingestion.payment_lookup
+type: duckdb.seed
+parameters:
+  path: payment_lookup.csv
+
+# - Lookups should have a stable primary key.
+columns:
+  - name: payment_type_id
+    type: integer
+    description: "Unique identifier for payment type"
+    primary_key: true
+    checks:
+      - name: not_null
+      - name: unique
+  - name: payment_type_name
+    type: string
+    description: "Human-readable payment type name"
+    checks:
+      - name: not_null
